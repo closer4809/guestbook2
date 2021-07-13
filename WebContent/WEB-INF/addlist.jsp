@@ -46,7 +46,7 @@
 					<td>[<%=guestbookVo.getNo() %>]</td>
 					<td><%=guestbookVo.getName() %></td>
 					<td><%=guestbookVo.getRegDate() %></td>
-					<td><a href="/guestbook2/gbc?action=dform&id=<%=guestbookVo.getNo()%>">삭제</a></td>
+					<td><a href="/guestbook2/gbc?action=dform&no=<%=guestbookVo.getNo()%>">삭제</a></td>
 				</tr>
 				<tr>
 					<td colspan=4><%=guestbookVo.getContent() %></td>

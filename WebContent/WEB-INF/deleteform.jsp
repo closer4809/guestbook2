@@ -21,12 +21,12 @@
 				<td>비밀번호</td>
 				<td><input type="password" name="password"></td>
 				<td><input type="submit" value="확인"></td>
-				<td>구분 : <input type="hidden" name="action" value="delete"> </td>
+				<td><input type="hidden" name="action" value="delete"> </td>
 			</tr>
 		</table>
 		<a href="/guestbook2/gbc?action=list">메인으로 돌아가기</a>
 		<br>
-		<input type='text' name="no" value="<%=no%>">
+		<input type='hidden' name="no" value="<%=no%>">
 		
 	</form>
 	
