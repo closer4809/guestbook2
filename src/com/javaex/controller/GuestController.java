@@ -56,7 +56,30 @@ public class GuestController extends HttpServlet {
 			
 			guestbookDao.guestbookInsert(guestbookVo);
 			System.out.println(guestbookVo);
+			
 			response.sendRedirect("/guestbook2/gbc?action=list");
+		}else if ("dform".equals(action)) {
+			System.out.println("[삭제폼]");
+			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/deleteform.jsp");
+			rd.forward(request, response);
+			
+		}else if ("delete".equals(action)) {
+			System.out.println("[삭제]");
+			
+			GuestbookDao guestbookDao = new GuestbookDao();
+			
+			request.setCharacterEncoding("UTF-8");
+			int no = Integer.parseInt(request.getParameter("no"));
+			String password = request.getParameter("password");
+			
+			GuestbookVo guestbookVo = new GuestbookVo();
+			guestbookVo.setNo(no);
+			guestbookVo.setPassword(password);
+			
+			guestbookDao.guestbookDelete(guestbookVo);
+			
+			response.sendRedirect("/guestbook2/gbc?action=list");
+			
 		}
 		
 		
